@@ -41,7 +41,7 @@ jobs:
      steps:
        - name: create change
          run: |
-           sndevopscli create change -p "{\"changeStepDetails\":{\"timeout\":3600,\"interval\":100},\"autoCloseChange\":true,\"attributes\":{\"short_description\":\"G Venkata Automated Software Deployment\",\"description\":\"Automated Software Deployment.\",\"assignment_group\":\"a715cd759f2002002920bde8132e7018\",\"implementation_plan\":\"Software update is tested and results can be found in Test Summaries Tab.\",\"backout_plan\":\"When software fails in production, the previous software release will be re-deployed.\",\"test_plan\":\"Testing if the software was successfully deployed or not\"}}"
+           sndevopscli create change -w false -p "{\"changeStepDetails\":{\"timeout\":3600,\"interval\":100},\"autoCloseChange\":true,\"attributes\":{\"short_description\":\"G Venkata Automated Software Deployment\",\"description\":\"Automated Software Deployment.\",\"assignment_group\":\"a715cd759f2002002920bde8132e7018\",\"implementation_plan\":\"Software update is tested and results can be found in Test Summaries Tab.\",\"backout_plan\":\"When software fails in production, the previous software release will be re-deployed.\",\"test_plan\":\"Testing if the software was successfully deployed or not\"}}"
 
   ServiceNowUpdateDevOpsChange:
        runs-on: ubuntu-latest
@@ -80,5 +80,5 @@ jobs:
       steps:
         - name: devops soanr results
           run: |
-            # sndevopscli create sonar -url 'https://sonarcloud.io' -projectKey 'xxxxxxx'
+            sndevopscli create sonar -url 'https://sonarcloud.io' -projectKey '3c008bd35b80196a8b23ef05d5a443cf7c968cd2'
             echo 'hello'
