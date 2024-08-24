@@ -19,7 +19,7 @@ env:
   CI_REPOSITORY_NAME: ${{ github.repository }}
   CI_RUN_ATTEMPT: ${{ github.run_attempt }}
   CI_PROJECT_TITLE: ${{ github.repository }}/${{github.workflow}}
-  CI_COMMIT_BRANCH: $${{ github.ref_name }}
+  CI_COMMIT_BRANCH: ${{ github.ref_name }}
   CI_WORKFLOW_NAME: ${{ github.workflow }}
 
 jobs:
