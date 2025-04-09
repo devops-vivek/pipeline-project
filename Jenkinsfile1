@@ -60,6 +60,7 @@ pipeline {
                         echo "deploy in UAT"
             	snDevOpsPackage(name: "devops_pipeline_demo_dev${version}", artifactsPayload: """{"artifacts": [{"name": "devops_pipeline_demo_dev.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "devops_pipeline_demo_dev"}]}""")
 	        snDevOpsChange()
+                snDevOpsGetChangeNumber()
                     }
                 }
                 stage('deploy to prod') {
